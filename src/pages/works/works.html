@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<div class="lightbox" [class.active]="openLgx">
+	<div class="close-button" (click)="closeLightbox()">
+		<ion-icon name="close"></ion-icon>
+	</div>
+	<div class="box works-lb">
+		<img src="{{image}}">
+	</div>
+</div>
+<ion-content padding>
+	<div class="work-con">
+		<h1>Arbeiten</h1>
+		<div class="works-list">
+			<div class="works-item" (click)="openLightbox('https://picsum.photos/1920/1080')">
+				<div class="works-img">
+					<img src="https://picsum.photos/1920/1080">
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

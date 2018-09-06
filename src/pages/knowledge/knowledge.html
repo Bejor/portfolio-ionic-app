@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<div class="lightbox" [class.active]="openLgx">
+	<div class="close-button" (click)="closeLightbox()">
+		<ion-icon name="close"></ion-icon>
+	</div>
+	<div class="box exp-lb">
+		<div class="box-exp-header">
+			<div class="icon">
+				<i class="{{ icon }}"></i>
+			</div>
+			<div class="name">
+				{{ name }}
+			</div>
+		</div>
+		<div class="knowledge">
+			<ul>
+				<ng-container *ngFor="let number of [1,2,3,4,5]; let i = index ">
+					<li [class.select]="i < knowlevel"><ion-icon name="bulb"></ion-icon></li>
+				</ng-container>
+			</ul>
+		</div>
+	</div>
+</div>
+<ion-content padding>
+	<div class="knowledge-con">
+		<h1>Kenntnisse</h1>
+		<div class="exp-list">
+			<div class="exp-item" (click)="openLightbox('devicon-photoshop-plain', 'Photoshop', 4)">
+				<div class="exp-item-inner">
+					<div class="exp-content">
+						<div class="exp-icon">
+							<i class="devicon-photoshop-plain"></i>
+						</div>
+						<div class="exp-meta">
+							<span>Photoshop</span>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-input">
+					<input type="hidden" name="name" value="Photoshop">
+					<input type="hidden" name="exp" value="4">
+				</div>
+			</div>
+			<div class="exp-item" (click)="openLightbox('devicon-css3-plain', 'Test 123', 1)">
+				<div class="exp-item-inner">
+					<div class="exp-content">
+						<div class="exp-icon">
+							<i class="devicon-ionic-original"></i>
+						</div>
+						<div class="exp-meta">
+							<span>Test 123</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

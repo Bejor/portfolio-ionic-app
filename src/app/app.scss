@@ -14,3 +14,84 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+* {
+	font-family: 'Lato', sans-serif;
+	box-sizing: border-box;
+	font-weight:200;
+}
+
+.toolbar-background-ios {
+	background: transparent !important;
+	border-color: transparent !important;
+}
+
+.content {
+	background: transparent;
+}
+
+.particles-container{
+	background: color($colors, primary);
+}
+
+[menuToggle] {
+	color: $active-color;
+}
+
+.nav-decor {
+	background: transparent !important;
+}
+
+.menu-inner {
+	background: color($colors, secondary) !important;
+}
+
+ion-nav {
+	background: rgba(color($colors, secondary), 0.9);
+}
+
+h1 {
+	font-family: 'Source Code Pro', monospace;
+	color:#fff;
+}
+
+.fixed-content, .scroll-content {
+	margin-top: 0 !important;
+}
+
+.menu-con {
+	height: 100%;
+	.menu {
+		top: 40%;
+		position: relative;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+
+
+		button {
+			background: transparent;
+			color:#fff;
+			display: table;
+			width: 100%;
+
+			.item-inner {
+				border-bottom: 0.55px solid rgba(255,255,255,0.1);
+
+				.icon {
+					color:$active-color;
+					padding-right: 15px;
+					font-size: 8vw;
+					display: table-cell;
+					vertical-align:middle;
+				}
+
+				.name-label {
+					display: table-cell;
+					vertical-align:middle;
+					font-size: 4vw;
+				}
+			}
+			
+		}
+	}
+}
