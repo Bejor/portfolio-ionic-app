@@ -18,11 +18,13 @@
 	<div class="work-con">
 		<h1>Arbeiten</h1>
 		<div class="works-list">
-			<div class="works-item" (click)="openLightbox('https://picsum.photos/1920/1080')">
-				<div class="works-img">
-					<img src="https://picsum.photos/1920/1080">
+			<ng-container *ngFor="let item of works" >
+				<div class="works-item" (click)="openLightbox(item.url)">
+					<div class="works-img">
+						<img src="{{item.url}}">
+					</div>
 				</div>
-			</div>
+			</ng-container>
 		</div>
 	</div>
 </ion-content>

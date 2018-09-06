@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ApiProvider } from '../../providers/api/api';
+
 /**
  * Generated class for the WorksPage page.
  *
@@ -19,7 +21,14 @@ export class WorksPage {
 
 	public image: any;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	public works: any;
+
+	constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+		this.works = [];
+		this.api.getDataFromServer('reference')
+	    .then(data => {
+	    	this.works = data;
+	    });
 	}
 
 	ionViewDidLoad() {

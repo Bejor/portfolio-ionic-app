@@ -31,34 +31,20 @@
 	<div class="knowledge-con">
 		<h1>Kenntnisse</h1>
 		<div class="exp-list">
-			<div class="exp-item" (click)="openLightbox('devicon-photoshop-plain', 'Photoshop', 4)">
-				<div class="exp-item-inner">
-					<div class="exp-content">
-						<div class="exp-icon">
-							<i class="devicon-photoshop-plain"></i>
-						</div>
-						<div class="exp-meta">
-							<span>Photoshop</span>
-						</div>
-					</div>
-				</div>
-				<div class="hidden-input">
-					<input type="hidden" name="name" value="Photoshop">
-					<input type="hidden" name="exp" value="4">
-				</div>
-			</div>
-			<div class="exp-item" (click)="openLightbox('devicon-css3-plain', 'Test 123', 1)">
-				<div class="exp-item-inner">
-					<div class="exp-content">
-						<div class="exp-icon">
-							<i class="devicon-ionic-original"></i>
-						</div>
-						<div class="exp-meta">
-							<span>Test 123</span>
+			<ng-container *ngFor="let item of expitems" >
+				<div class="exp-item" (click)="openLightbox(item.icon, item.name, item.lvl)">
+					<div class="exp-item-inner">
+						<div class="exp-content">
+							<div class="exp-icon">
+								<i class="{{item.icon}}"></i>
+							</div>
+							<div class="exp-meta">
+								<span>{{item.name}}</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</ng-container>
 		</div>
 	</div>
 </ion-content>

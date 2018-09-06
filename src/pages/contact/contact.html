@@ -11,16 +11,17 @@
 	<div class="contact-inner">
 		<h1>Contact Me</h1>
 		<div class="contact-form">
-			<form>
-				<input type="text" name="firstname" placeholder="Vorname" required>
-				<input type="text" name="lastname" placeholder="Nachname" required>
-				<input type="text" name="email" placeholder="Email" required>
-				<input type="text" name="telephone" placeholder="Telefon">
-				<textarea name="text" placeholder="Nachricht" required></textarea>
+			<p class="err-msg" *ngIf="msgType == 1">Bitte füllen Sie alle unten markierten Felder aus um mit mir in Kontakt zu tretten.</p>
+			<p class="success-msg" *ngIf="msgType == 2">Ihre Nachricht wurde erfolgreich an mich gesendet.<br> Ich werde versuchen so schnell wie möglich mit Ihnen in Kontakt zu treten.</p>
+			<form [formGroup]="formctrl" (ngSubmit)="sendContact()">
+				<ion-input type="text" [(ngModel)]="emailmsg.firstname" formControlName="firstname" name="firstname" placeholder="Vorname*"></ion-input>
+				<ion-input type="text" [(ngModel)]="emailmsg.lastname" formControlName="lastname" name="lastname" placeholder="Nachname*"></ion-input>
+				<ion-input type="email" [(ngModel)]="emailmsg.email" formControlName="email" name="email" placeholder="Email*"></ion-input>
+				<ion-input type="tel" [(ngModel)]="emailmsg.telephone" formControlName="telephone" name="telephone" placeholder="Telefon"></ion-input>
+				<ion-textarea [(ngModel)]="emailmsg.text" formControlName="text" name="text" placeholder="Nachricht*"></ion-textarea>
+				<button class="submit-btn" type="submit" [disabled]="!formctrl.valid">Send</button>
 			</form>
-			<div class="submit-btn">
-				Send
-			</div>
+			
 		</div>
 	</div>
 </ion-content>

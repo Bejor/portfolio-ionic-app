@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ApiProvider } from '../../providers/api/api';
+
 /**
  * Generated class for the KnowledgePage page.
  *
@@ -21,7 +23,15 @@ export class KnowledgePage {
 
 	public openLgx: boolean = false;
 
-	constructor(public navCtrl: NavController, public navParams: NavParams) {
+	public expitems: any;
+
+	constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+		this.expitems = [];
+
+		this.api.getDataFromServer('exp')
+	    .then(data => {
+	    	this.expitems = data;
+	    });
 	}
 
 	ionViewDidLoad() {

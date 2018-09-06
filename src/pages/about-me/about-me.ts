@@ -18,9 +18,12 @@ import { ApiProvider } from '../../providers/api/api';
 export class AboutMePage {
 
 	public aboutMe: any;
-	public lifeCareer: any;
+	public lifeCareers: any;
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+		this.aboutMe = {};
+		this.lifeCareers = [];
+
 		this.api.getDataFromServer('aboutme')
 		.then( data => {
 	       this.aboutMe = data;
@@ -28,7 +31,7 @@ export class AboutMePage {
 
 	    this.api.getDataFromServer('lifecareer')
 	    .then(data => {
-	    	this.lifeCareer = data;
+	    	this.lifeCareers = data;
 	    });
 	}
 

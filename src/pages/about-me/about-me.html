@@ -15,67 +15,11 @@
 	<div class="lifecareer-con">
 		<h1>Lebenslauf</h1>
 		<div class="lifecareer">
-			<div class="lifecareer-box">
+			<div class="lifecareer-box" *ngFor="let lifecareer of lifeCareers">
 				<div class="point"><div class="inner-point"></div></div>
 				<div class="lifecareer-text">
-					<h2>Arbeitssuchend</h2>
-					<span>seit August 2018</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Lehre zum Medienfachmann für Mediendesign/Webdesign in Wien</h2>
-					<span>Juni 2016 - Juli 2018</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Lehre zum Medienfachmann für Mediendesign/Webdesign in Linz</h2>
-					<span>2015 - 2016</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>HTL Ungargasse in Wien</h2>
-					<span>2011 - 2014</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Bundesrealgymnasium 14 in Wien</h2>
-					<span>2007 - 2011</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Volksschule Hochsatzengasse in Wien</h2>
-					<span>2003 - 2007</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Volksschule Hochsatzengasse in Wien</h2>
-					<span>2003 - 2007</span>
-					<div class="arrow_box"></div>
-				</div>
-			</div>
-			<div class="lifecareer-box">
-				<div class="point"><div class="inner-point"></div></div>
-				<div class="lifecareer-text">
-					<h2>Geburtstag</h2>
-					<span>27 September 1996</span>
+					<h2>{{lifecareer.activity}}</h2>
+					<span>{{lifecareer.time}}</span>
 					<div class="arrow_box"></div>
 				</div>
 			</div>
